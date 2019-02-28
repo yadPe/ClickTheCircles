@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CanvasTest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="game">
+        <canvas onclick="mouseClick(event)"></canvas>
+    </div>
+    <div id="fadding "></div>
+    <div id="background">
+        <img src="https://i.redd.it/bz936c0hlo6x.png" class="stretch" alt="" />
+    </div>
+
+    <section id='debug'>
+        <h4>Debug : </h4>
+        <span id="Circle"></span><br>
+        <span id="Mouse"></span><br>
+        <span id="Key"></span><br>
+        <span id="Intersect"></span>
+        <p id='Misc'></p><br>
+        <span id="Frame"></span>
+        <h4>Player Stats : </h4>
+        <span id="Score"></span><br>
+        <span id="Accuracy"></span><br>
+        <span id="CurrentCombo"></span><br>
+        <span id="BestCombo"></span><br>
+        <span id="TotalClick"></span><br>
+        <span id="HitMiss"></span>
+    </section>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/circle.js"></script>
+<script src="js/player.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ini.js"></script>
+<script src="js/difficulty.js"></script>
+
+</html>
