@@ -12,22 +12,20 @@ body {
     color: white;
     /*background-color: #101010;*/
     text-align: center;
-    /*background: url("https://i.redd.it/bz936c0hlo6x.png");
+  
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: center; */
+    background-position: center; 
     overflow: hidden;
+    background-image : url('Fond01.png') ;
+    background-size : cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow : hidden;
   }
 
   
-  #background {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    z-index: -2; 
-  }
+
   
   .stretch {
     width: 100%;

@@ -10,14 +10,11 @@
 <body>
 
     <div id="game">
-        <canvas onclick="mouseClick(event)"></canvas>
+        <canvas onclick="mouseClick(event)" id="canvas"></canvas>
     </div>
     <div id="fadding "></div>
-    <div id="background">
-        <img src="https://i.redd.it/bz936c0hlo6x.png" class="stretch" alt="" />
-    </div>
-
-    <section id='debug'>
+  
+    <section id='debug' style='display: none'>
         <h4>Debug : </h4>
         <span id="Circle"></span><br>
         <span id="Mouse"></span><br>
@@ -34,6 +31,7 @@
         <span id="HitMiss"></span>
     </section>
 
+<audio id="audio" src="https://cdn.discordapp.com/attachments/568402956991332365/568514899177635840/erro.mp3" ></audio>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

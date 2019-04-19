@@ -66,7 +66,7 @@ function mouseClick(event) {
         x: event.clientX,
         y: event.clientY
     };
-
+   
     var coords = "Client : x " + clientPos.x + ", y " + clientPos.y;
     document.getElementById("Mouse").innerHTML = coords;
 
@@ -78,20 +78,40 @@ function mouseClick(event) {
         "isIntersect : " + hitsCircle;
 
     if (hitsCircle) {
+        audio.play()
         playerAccuracy.hit += 1;
         playerStats.currentCombo += 1;
-        if (playerStats.currentCombo > 1) {
+        if (playerStats.currentCombo > 3) {
+            document.body.style.backgroundImage = `url('Fond02.png')`
             playerStats.score += 100 * playerStats.currentCombo;
-        } else {
+        } 
+        if (playerStats.currentCombo > 4) {
+           
+            playerStats.score += 100 * playerStats.currentCombo;
+        }
+        if (playerStats.currentCombo > 5) {
+            
+            playerStats.score += 100 * playerStats.currentCombo;
+        }
+        if (playerStats.currentCombo > 6) {
+           
+            playerStats.score += 100 * playerStats.currentCombo;
+          changeCanvas()
+
+        }
+        else {
             playerStats.score += 100;
         }
         nextCircle(hitsCircle);
     } else {
+        createError()
+        audiomiss.play()
         playerAccuracy.miss += 1;
         playerStats.currentCombo = 0;
         drawCombo(playerStats.currentCombo);
     }
     if (playerStats.currentCombo > playerStats.bestCombo) {
+        audiowolo.play()
         playerStats.bestCombo = playerStats.currentCombo;
         document.getElementById("BestCombo").innerHTML =
             "Best Combo : x" + playerStats.bestCombo;
@@ -124,7 +144,7 @@ function clearCanvas() {
 function drawCombo(playerCombo){
     //Combo Indicator
     ctx.beginPath();
-
+    
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
     ctx.font = 60 + "px Arial";
