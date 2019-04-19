@@ -106,15 +106,23 @@ function mouseClick(event) {
     //     "isIntersect : " + hitsCircle;
 
     if (hitsCircle) {
+        audioLib.son0.play()
+        music.play()
         playerAccuracy.hit += 1;
         playerStats.currentCombo += 1;
         if (playerStats.currentCombo > 1) {
             playerStats.score += 100 * playerStats.currentCombo;
+        }
+        if (playerStats.currentCombo > 4) {
+            document.body.style.backgroundImage = `url('Fond02.png')`
+            playerStats.score += 100 * playerStats.currentCombo;
+            
         } else {
             playerStats.score += 100;
         }
         nextCircle(hitsCircle);
     } else {
+        audioLib.son1.play()
         playerAccuracy.miss += 1;
         playerStats.currentCombo = 0;
         drawCombo(playerStats.currentCombo);

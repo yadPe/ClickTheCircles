@@ -1,22 +1,32 @@
 body {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome and Opera */
-  
-    margin: 0px;
-    padding: 0;
-    color: white;
-    /*background-color: #101010;*/
-    text-align: center;
-    /*background: url("https://i.redd.it/bz936c0hlo6x.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center; */
-    overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
+  margin: 0px;
+  padding: 0;
+  color: white;
+  /*background-color: #101010;*/
+  text-align: center;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center; 
+  overflow: hidden;
+  background-image : url('Fond01.png') ;
+  background-size : cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow : hidden;
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+  -o-transition: background 1s;
+  transition: background 1s;
+
     cursor: url(./img_468762.png) 64 64, auto;
   }
 
