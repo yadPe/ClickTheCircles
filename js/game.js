@@ -40,7 +40,7 @@ function animate() {
 animate();
 
 var lastCircle;
-var speed = 1000;
+var speed = 1500;
 var persoDisplay = []
 var lastPeradd = 0  
 
@@ -153,14 +153,21 @@ function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ', 0.9 ';
+}
+
+var color = random_rgba();
+
 function drawCombo(playerCombo){
     //Combo Indicator
     ctx.beginPath();
 
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
-    ctx.font = 60 + "px Arial";
-    ctx.fillStyle = "rgba(255,255,255," + 0.8 + ")";
+    ctx.font = playerCombo > 1 ?  (60*playerCombo)/2.2 + "px Arial" : '60px Arial';
+    ctx.fillStyle = random_rgba()
     ctx.fillText("x" + playerCombo, 45, canvas.height - 50);
     ctx.lineCap = "round";
 

@@ -17,6 +17,7 @@ body {
     background-size: 100%;
     background-position: center; */
     overflow: hidden;
+    cursor: url(./img_468762.png) 64 64, auto;
   }
 
   
@@ -50,7 +51,7 @@ body {
   }
   
   #game {
-    cursor: url(https://imgur.com/download/6oA8BAV) 64 64, auto;
+    
     position: relative;
     /*display: block;*/
     width: 100%;
