@@ -41,22 +41,38 @@ animate();
 
 var lastCircle;
 var speed = 1000;
+var persoDisplay = []
+var lastPeradd = 0  
+
+function addperso(){
+    const oe = personnages[Math.floor(Math.random() * personnages.length)];
+        oe.x = Math.floor(Math.random() * (canvas.width - oe.width)) + 10;
+        oe.y = Math.floor(Math.random() * (canvas.height - oe.height)) + 10;
+        persoDisplay.push(oe)
+}
 
 function game() {
     if (!lastCircle) {
         lastCircle = performance.now();
     }
+    
+    
+
+   
 
     currentTime = performance.now();
 
     if (currentTime - lastCircle > speed) {
         lastCircle = performance.now();
+        
         playerAccuracy.miss += 1;
         playerStats.accuracyMiss += 1;
         playerStats.currentCombo = 0;
         computeAccuracy(playerAccuracy.hit, playerStats.accuracyMiss);
         nextCircle();
         updateLabels();
+
+       
     }
 
 }
@@ -67,15 +83,26 @@ function mouseClick(event) {
         y: event.clientY
     };
 
+    if (playerStats.totalClick - lastPeradd > 5){
+        console.log('add')
+        addperso();
+        lastPeradd = playerStats.totalClick
+        //personnages[Math.floor(Math.random() * personnages.length)].draw();
+    }
+
+    if (persoDisplay.length > 0){
+        persoDisplay.map(perso => perso.draw())
+    }
+
     var coords = "Client : x " + clientPos.x + ", y " + clientPos.y;
     document.getElementById("Mouse").innerHTML = coords;
 
     playerStats.totalClick += 1;
     playerStats.accuracyMiss += 1;
 
-    let hitsCircle = isIntersect(clientPos, circle);
-    document.getElementById("Intersect").innerHTML =
-        "isIntersect : " + hitsCircle;
+    let hitsCircle = isIntersect(clientPos, oeufs[currOeuf]);
+    // document.getElementById("Intersect").innerHTML =
+    //     "isIntersect : " + hitsCircle;
 
     if (hitsCircle) {
         playerAccuracy.hit += 1;
@@ -99,10 +126,14 @@ function mouseClick(event) {
     computeAccuracy(playerAccuracy.hit, playerStats.accuracyMiss);
     updateLabels();   
 }
-
+var currOeuf = 0;
 function nextCircle(hitsCircle) {
 
-    circle.draw();
+    //circle.draw();
+    if (oeufs){
+        currOeuf = Math.floor(Math.random()* oeufs.length)
+        oeufs[currOeuf].draw();
+    }
 
     lastCircle = performance.now();
     playerStats.totalCircle += 1;
@@ -111,9 +142,10 @@ function nextCircle(hitsCircle) {
 
 function isIntersect(point, circle) {
     return (
-        Math.sqrt(
-            (point.x - (circle.x + hitLeftOffset)) ** 2 + (point.y - circle.y) ** 2
-        ) < circle.radius
+
+        (point.y > circle.y && point.y < circle.y + circle.height 
+            && point.x > circle.x && point.x < circle.x + circle.width)
+            
     );
 }
 

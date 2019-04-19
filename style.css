@@ -36,7 +36,7 @@ body {
   
   canvas {
     /*border: 1px solid #383838;*/
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     margin: 0;
     padding: 0;
     z-index: 0;
@@ -59,7 +59,7 @@ body {
     /*padding: 0px 25px 0px 10px;
     /*overflow: hidden;*/
   
-    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: rgba(0, 0, 0, 0.6); */
     /*background: url("https://i.redd.it/bz936c0hlo6x.png");*/
     margin: 0px;
     padding: 0px;
@@ -73,5 +73,14 @@ body {
     text-align: left;
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+  }
+
+  #bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
   }
   
