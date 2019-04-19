@@ -87,6 +87,7 @@ function mouseClick(event) {
         console.log('add')
         addperso();
         lastPeradd = playerStats.totalClick
+        changeCanvas()
         //personnages[Math.floor(Math.random() * personnages.length)].draw();
     }
 

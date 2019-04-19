@@ -84,4 +84,18 @@ body {
     z-index: 1;
     pointer-events: none;
   }
+
+  #fire{
+    background-image: url(./fire.gif);
+    background-position: center;
+    background-size: cover;
+    transform: translate(-50%);
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    bottom: -500px;
+    height: 50%;
+    width: 100%;
+    transition: all 1s;
+  }
   
