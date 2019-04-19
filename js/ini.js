@@ -184,6 +184,21 @@ function generateDvdLogo(target) {
         var dy = Math.random() * (4 - 0.5) + 0.5;
         dvdArray.push(new EpicDvdLogo(x, y, dx, dy, logoSize, speed))
     }
-
-
 }
+
+//const imageLib = ['https://cdn.discordapp.com/attachments/568402956991332365/568756289384218624/Error_Message.png', ]
+let errors = [];
+let errorImg = new Image();
+errorImg.src = 'https://cdn.discordapp.com/attachments/568402956991332365/568756289384218624/Error_Message.png';
+errorImg.onload = function () {
+    for (let i = 0; i<1; i++){
+        const imaaa = new Image();
+        imaaa.src = 'https://cdn.discordapp.com/attachments/568402956991332365/568756289384218624/Error_Message.png'
+        const imaa = new Image();
+        imaa.src = 'https://cdn.discordapp.com/attachments/568402956991332365/568757085387489292/Error_Message.png'
+        errors.push(new ErrorMsg(imaaa))
+        errors.push(new ErrorMsg(imaa))
+    }
+}
+
+

@@ -133,3 +133,19 @@ class Oeuf extends Circle{
         this.rarity = rarity;
     }
 }
+
+class ErrorMsg extends Circle{
+    constructor(image, name, rarity){
+        super(image)
+    }
+    draw() {
+       
+
+        ///ctx.save();
+        bgCtx.drawImage(this.image, this.x, this.y)
+
+        //bgCtx.globalCompositeOperation = "destination-over";
+
+
+    }
+}
