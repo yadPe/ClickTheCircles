@@ -7,10 +7,8 @@ const audioLib = {
 }
 
 for (let i = 0;i< audioSrc.length; i++){
-    const son = new Audio();
-    son.src = audioSrc[i];
-    son.load();
-    audioLib['son' + i] = son
+    const sample = new Switcher(audioSrc[i], 5)
+    audioLib['son' + i] = sample
 }
 
 // errorSprite 

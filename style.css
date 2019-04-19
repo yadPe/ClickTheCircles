@@ -97,5 +97,6 @@ body {
     height: 50%;
     width: 100%;
     transition: all 1s;
+    pointer-events: none;
   }
   
